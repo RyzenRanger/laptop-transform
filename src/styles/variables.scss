@@ -1,0 +1,13 @@
+$color-dark: #000000;
+$color-white: #FFFFFF;
+
+
+@font-face {
+	font-family: 'Cera Pro Medium';
+	src: url('@/assets/fonts/CeraPro-Medium.eot'); //CeraPro-Thin.eot
+	src: url('@/assets/fonts/CeraPro-Medium.eot?#iefix') format('embedded-opentype'),
+	url('@/assets/fonts/CeraPro-Medium.woff') format('woff'),
+	url('@/assets/fonts/CeraPro-Medium.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
