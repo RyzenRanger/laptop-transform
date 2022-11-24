@@ -93,7 +93,26 @@
         square my an regard. Often merit stuff first oh up hills 
         as he. And this is some text from our generator.
       </p>
+      <p>Why not use lorem ipsum ? Lorem ipsum is the 
+        most common form of "Greeking". However more and 
+        more people are sick and tired of using the same
+        sample text over and over again. Also lorem ipsum 
+        is in latin and it may not always be the best choice. 
+        We tried to have text generated in some of the most 
+        widely used languages but if you are in desperate 
+        need of random text in your own language, send us 
+        an email and we'll add it here.</p>
     </div>
+    <a
+      href   = "https://www.linkedin.com/in/v%C5%82adys%C5%82av-podenko-066264234/"
+      target = "_blank"
+    >
+      <img
+        class = "linked-in"
+        src   = "@/assets/img/link-pv.png"
+        alt   = "linked-in"
+      >
+    </a>
   </div>
 </template>
 
@@ -116,13 +135,11 @@ export default {
   created() {
     this.windowWidth = window.innerWidth;
     window.addEventListener('scroll', () => {
-      //432 for 768 and more
-      console.log(window.scrollY)
       if (this.windowWidth >= 375) {
-        if (window.scrollY <= 528) {
+        if (window.scrollY <= 738) {
           this.scrollY = window.scrollY;
         } else {
-          this.scrollY = 528
+          this.scrollY = 738
         }
       }
 
@@ -132,13 +149,13 @@ export default {
 
   computed: {
     rectangleX () {
-      return Number(this.scrollY / 5)
+      return Number(this.scrollY / 7)
     }
   },
 
   methods: {
     checkAndChangeLaptopStatus (scroll) {
-      if (scroll >= 470) {
+      if (scroll >= 655) {
         this.laptopIsOpen = false;
       } else {
         this.laptopIsOpen = true;
@@ -162,6 +179,8 @@ body {
 }
 
 #app {
+  display: flex; flex-direction: column;
+  align-items: center;
   position: relative;
   .welcome-container {
     padding: 30px 0;
@@ -284,7 +303,7 @@ body {
   }
   .information-container {
     margin: 0 auto;
-    max-width: 80%;
+    max-width: 50%;
     background-image: linear-gradient(45deg, #d5eb0e, #f00ebf);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -294,6 +313,16 @@ body {
       img {
         max-width: 30%;
         float: right;
+      }
+      &:nth-child(3) {
+        @media screen and (max-width: 767px) and (min-width: 375px) {
+          display: none;
+        }
+      }
+      &:nth-child(4) {
+        @media screen and (max-width: 767px) and (min-width: 375px) {
+          display: none;
+        }
       }
     }
     @media screen and (max-width: 1299px) and (min-width: 768px) {
@@ -320,6 +349,17 @@ body {
   .vue-typer .custom.caret {
     width: 10px;
     background-color: #3F51B5;
+  }
+  .linked-in {
+    transition: transform .2s ease-out;
+    max-width: 700px;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    @media screen and (max-width: 767px) and (min-width: 375px) {
+      max-width: 360px;
+    }
   }
 }
 </style>
